@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct XbuttonView: View {
+    
+    @Binding var isShowingDetailView: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Spacer()
+            Button {
+                isShowingDetailView = false
+            } label: {
+                Image(systemName: "xmark")
+                    .foregroundColor(Color(.label))
+                    .imageScale(.large)
+                    .frame(width: 44, height: 44)
+                
+            }
+        }.padding()
     }
 }
 
 #Preview {
-    XbuttonView()
+    XbuttonView(isShowingDetailView: .constant(false))
 }

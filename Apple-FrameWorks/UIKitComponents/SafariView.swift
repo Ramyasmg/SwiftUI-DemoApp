@@ -6,13 +6,19 @@
 //
 
 import SwiftUI
+import SafariServices
 
-struct SafariView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct SafariView: UIViewControllerRepresentable {
+    
+    let url: URL
+    
+    
+    func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController  {
+        SFSafariViewController(url: url)
     }
-}
-
-#Preview {
-    SafariView()
+    
+    
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: UIViewControllerRepresentableContext<SafariView>) {
+        
+    }
 }
